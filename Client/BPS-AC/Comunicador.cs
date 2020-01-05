@@ -22,7 +22,7 @@ namespace BPS_AC
         //Atributos da comunicação
         private Socket socketCliente = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         private Socket socketServidor = null;
-        private bool iniciado = false;
+        private int status = 0;
         private Byte[] buffer = new Byte[1024];
 
         //Atributos do cliente
@@ -30,12 +30,15 @@ namespace BPS_AC
         private string hashPC = null;
         private string hashAC = null;
 
-        public Jogador Player { get => player; set => player = value; }
-
-        enum Codigos
+        enum Bandeiras
         {
-            ARQUIVOS_MODIFICADOS = 1
-        }
+            CONEXAO = 'C',
+            DESCONEXAO = 'D',
+            ALERTA = 'A'
+        };
+
+        public Jogador Player { get => player; set => player = value; }
+        public int Status { get => status; set => status = value; }
 
         public Comunicador(string hashPC, string hashAC)
         {
@@ -45,15 +48,27 @@ namespace BPS_AC
 
         public void Iniciar()
         {
-            Console.WriteLine("Comunicação iniciada");
+            Console.WriteLine("Aguardando comunicação");
 
             socketCliente.Bind(new IPEndPoint(IPAddress.Any, SOCKET_PORTA));
             socketCliente.Listen(1);
             socketCliente.BeginAccept(new AsyncCallback(Inicio), null);
         }
 
-        public void EnviarDados(string dados)
+        public void AlertarServidor(Utils.Codigos codigo)
         {
+            if (codigo == Utils.Codigos.FECHADO)
+                EnviarDados(Bandeiras.DESCONEXAO, new string[] { Player.Id });
+            else
+                EnviarDados(Bandeiras.ALERTA, new string[] { Player.Id, (int)codigo+"" });
+        }
+
+        private void EnviarDados(Bandeiras flag, string []args)
+        {
+            string dados = $"{(char)flag}|";
+            foreach (string a in args)
+                dados += $"{a}|";
+
             Byte[] bytesEnvio = Encoding.UTF8.GetBytes(dados);
             socketServidor.BeginSend(bytesEnvio, 0, bytesEnvio.Length, SocketFlags.None, new AsyncCallback(Envio), socketServidor);
         }
@@ -79,8 +94,8 @@ namespace BPS_AC
 
                 if (getDataLength == 0)
                 {
+                    status = 3;
                     Console.WriteLine("O servidor encerrou a conexão com o cliente.");
-                    Application.Exit();
                 }
                 else
                 {
@@ -91,27 +106,15 @@ namespace BPS_AC
                     Console.WriteLine($"Dados recebidos = {encoded}");
 
                     //Primeira conexão
-                    if (iniciado == false)
+                    if (status == 0)
                     {
-                        iniciado = true;
-                        int idx1 = encoded.IndexOf('*');
+                        status = 1;
+                        string []parts = encoded.Split('|');
 
-                        Player = new Jogador(encoded.Substring(idx1 + 1, encoded.Length - idx1 - 1), encoded.Substring(5, idx1 - 5));
+                        Player = new Jogador(parts[0], parts[1]);
                         Console.WriteLine($"Nick = {Player.Nick}, ID = {Player.Id}");
 
-                        EnviarDados($"id_{Player.Id}*pchash_{hashPC}*achash_{hashAC}*version_{versao}");
-                        
-
-                        // -- Verifica se o nome que entrou no servidor é diferente do informado no Launcher
-                        /*if (GetPlayerInfo.Name != txtNickName.Text)
-                        {
-                            Thread.Sleep(2000);
-
-                            enviado = Encoding.UTF8.GetBytes(@"cheat_" + CHEATCODE_DIFF_NAME + @"*id_" + GetPlayerInfo.Playerid);
-                            receiveSocket.BeginSend(enviado, 0, enviado.Length, SocketFlags.None, new AsyncCallback(Envio), receiveSocket);
-                        }
-
-                        txtLog.BeginInvoke((Action)delegate () { txtLog.Text += @"Informações enviadas."; });*/
+                        EnviarDados(Bandeiras.CONEXAO, new string[] { Player.Id, hashPC, hashAC, versao});
                     }
                 }
 
@@ -120,7 +123,7 @@ namespace BPS_AC
             }
             catch
             {
-                Environment.Exit(0);
+                status = 4;
             }
         }
 

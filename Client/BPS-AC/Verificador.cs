@@ -31,7 +31,6 @@ namespace BPS_AC
             ARQUIVOS_LIBERADOS_ASI.Add(new Liberado("ShellFix.asi", new string[] { "TLOSS error", "SING error", "DOMAIN error" }));
             ARQUIVOS_LIBERADOS_ASI.Add(new Liberado("StreamMemFix.asi", new string[] { "TLOSS error", "SING error", "DOMAIN error" }));
             ARQUIVOS_LIBERADOS_ASI.Add(new Liberado("samp.asi", new string[] { "RefreshSize()", "Controls::Base:ImagePanel", "fontsize", "fontweight", "samp.dll", "san_andreas_multiplayer.dll", "disablekillchat" }));
-            
         }
 
         /**
@@ -97,9 +96,6 @@ namespace BPS_AC
                     val = VerificarArquivoCLEO(arquivo);
                     //Console.WriteLine($"{arquivo.FullName} resultado = {val}");
                     a.CLEO.Add(new Arquivo(arquivo));
-
-                    if (val > 0)
-                        a.LoginPermitido = false;
                 }
                 //Verificando os arquivos .asi encontrados
                 else if (arquivo.Extension.Equals(".asi"))
@@ -113,8 +109,11 @@ namespace BPS_AC
                     a.SF.Add(new Arquivo(arquivo));
                 }
 
-                if(val > 0)
+                if (val > 0)
+                {
                     a.Suspeitos.Add(new Arquivo(arquivo));
+                    a.LoginPermitido = false;
+                }
             }
 
             //Verificando a existência de pastas suspeitas
