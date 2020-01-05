@@ -1,0 +1,9 @@
+D:\Users\Bruno\Documents\BPS AC\BPS AC\BPS-AC\bin\Release\BPS-AC.exe.config
+D:\Users\Bruno\Documents\BPS AC\BPS AC\BPS-AC\bin\Release\BPS-AC.exe
+D:\Users\Bruno\Documents\BPS AC\BPS AC\BPS-AC\bin\Release\BPS-AC.pdb
+D:\Users\Bruno\Documents\BPS AC\BPS AC\BPS-AC\obj\Release\BPS-AC.csprojAssemblyReference.cache
+D:\Users\Bruno\Documents\BPS AC\BPS AC\BPS-AC\obj\Release\BPS_AC.FormPrincipal.resources
+D:\Users\Bruno\Documents\BPS AC\BPS AC\BPS-AC\obj\Release\BPS_AC.Properties.Resources.resources
+D:\Users\Bruno\Documents\BPS AC\BPS AC\BPS-AC\obj\Release\BPS-AC.csproj.GenerateResource.cache
+D:\Users\Bruno\Documents\BPS AC\BPS AC\BPS-AC\obj\Release\BPS-AC.exe
+D:\Users\Bruno\Documents\BPS AC\BPS AC\BPS-AC\obj\Release\BPS-AC.pdb
