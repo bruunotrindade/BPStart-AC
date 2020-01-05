@@ -1,0 +1,20 @@
+C:\Users\Eduardo AC\Documents\Visual Studio 2015\Projects\SAMP AC\SAMP-AC\bin\Debug\SAMP-AC.exe.config
+C:\Users\Eduardo AC\Documents\Visual Studio 2015\Projects\SAMP AC\SAMP-AC\bin\Debug\SAMP-AC.exe
+C:\Users\Eduardo AC\Documents\Visual Studio 2015\Projects\SAMP AC\SAMP-AC\bin\Debug\SAMP-AC.pdb
+C:\Users\Eduardo AC\Documents\Visual Studio 2015\Projects\SAMP AC\SAMP-AC\obj\Debug\SAMP-AC.csprojResolveAssemblyReference.cache
+C:\Users\Eduardo AC\Documents\Visual Studio 2015\Projects\SAMP AC\SAMP-AC\obj\Debug\SAMP_AC.formPrincipal.resources
+C:\Users\Eduardo AC\Documents\Visual Studio 2015\Projects\SAMP AC\SAMP-AC\obj\Debug\SAMP_AC.formSplash.resources
+C:\Users\Eduardo AC\Documents\Visual Studio 2015\Projects\SAMP AC\SAMP-AC\obj\Debug\SAMP_AC.Properties.Resources.resources
+C:\Users\Eduardo AC\Documents\Visual Studio 2015\Projects\SAMP AC\SAMP-AC\obj\Debug\SAMP-AC.csproj.GenerateResource.Cache
+C:\Users\Eduardo AC\Documents\Visual Studio 2015\Projects\SAMP AC\SAMP-AC\obj\Debug\SAMP-AC.exe
+C:\Users\Eduardo AC\Documents\Visual Studio 2015\Projects\SAMP AC\SAMP-AC\obj\Debug\SAMP-AC.pdb
+D:\Users\Bruno\Documents\BPS AC\SAMP AC\SAMP-AC\bin\Debug\SAMP-AC.exe.config
+D:\Users\Bruno\Documents\BPS AC\SAMP AC\SAMP-AC\bin\Debug\SAMP-AC.exe
+D:\Users\Bruno\Documents\BPS AC\SAMP AC\SAMP-AC\bin\Debug\SAMP-AC.pdb
+D:\Users\Bruno\Documents\BPS AC\SAMP AC\SAMP-AC\obj\Debug\SAMP-AC.csprojAssemblyReference.cache
+D:\Users\Bruno\Documents\BPS AC\SAMP AC\SAMP-AC\obj\Debug\SAMP_AC.formPrincipal.resources
+D:\Users\Bruno\Documents\BPS AC\SAMP AC\SAMP-AC\obj\Debug\SAMP_AC.formSplash.resources
+D:\Users\Bruno\Documents\BPS AC\SAMP AC\SAMP-AC\obj\Debug\SAMP_AC.Properties.Resources.resources
+D:\Users\Bruno\Documents\BPS AC\SAMP AC\SAMP-AC\obj\Debug\SAMP-AC.csproj.GenerateResource.cache
+D:\Users\Bruno\Documents\BPS AC\SAMP AC\SAMP-AC\obj\Debug\SAMP-AC.exe
+D:\Users\Bruno\Documents\BPS AC\SAMP AC\SAMP-AC\obj\Debug\SAMP-AC.pdb
