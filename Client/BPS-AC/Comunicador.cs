@@ -1,15 +1,13 @@
-﻿using System;
-using System.Drawing;
-using Microsoft.Win32;
-using System.IO;
+﻿/**
+ * Brasil Play Start - Anti Cheater
+ * Desenvolvido por: iHollyZinhO
+ **/
+
+using System;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
-using System.Management;
-using System.Security.Cryptography;
-using System.Diagnostics;
-using System.Threading;
 
 namespace BPS_AC
 {

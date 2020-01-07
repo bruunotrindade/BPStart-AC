@@ -1,4 +1,9 @@
-﻿using System;
+﻿/**
+ * Brasil Play Start - Anti Cheater
+ * Desenvolvido por: iHollyZinhO
+ **/
+
+using System;
 using System.Collections;
 using System.IO;
 
