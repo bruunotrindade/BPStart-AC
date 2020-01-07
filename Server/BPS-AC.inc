@@ -3,7 +3,7 @@
 #endif
 #define samp_rcon_included
 #if !defined socket_included
-	#error You need socket.inc to use samp_ac.inc
+	#error You need socket.inc to use BPS-AC.inc
 #endif
 
 enum SocketAC
@@ -204,3 +204,8 @@ static SendPlayerACPackage(playerid, string[])
 {
 	return socket_send(PlayerAC[playerid][acSocket], string, strlen(string));
 } 
+
+public IsPlayerACConnected(playerid)
+{
+	return PlayerAC[playerid][acConectado];
+}

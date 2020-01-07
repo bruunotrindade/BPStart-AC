@@ -1,15 +1,13 @@
-﻿using System;
+﻿/**
+ * Brasil Play Start - Anti Cheater
+ * Desenvolvido por: iHollyZinhO
+ **/
+
+using System;
 using System.Drawing;
 using Microsoft.Win32;
-using System.IO;
 using System.Windows.Forms;
-using System.Net;
-using System.Net.Sockets;
-using System.Text;
-using System.Management;
-using System.Security.Cryptography;
 using System.Diagnostics;
-using System.Threading;
 
 namespace BPS_AC
 {
@@ -26,13 +24,6 @@ namespace BPS_AC
         //Mover formulário
         private Point formLocation = Point.Empty;
         private Boolean formMoving = false;
-
-        // -- Cheat Codes
-        /*private Int16 CHEATCODE_MULTIPLE_EXEC = (2);
-        private Int16 CHEATCODE_SUSPECT_OBJECTS = (3);
-        private Int16 CHEATCODE_DIFF_NAME = (4);
-        private Int16 CHEATCODE_CHANGED_AC = (5);
-        private Int16 CHEATCODE_DIFF_VERSION = (6);*/
 
         //Callback chamada ao abrir o Launcher para inicializar os componentes
         public FormPrincipal()
